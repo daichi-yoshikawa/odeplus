@@ -1,3 +1,9 @@
+/build
+/libs
+*.a
+*.a.*
+*.so.*
+
 # Prerequisites
 *.d
 
