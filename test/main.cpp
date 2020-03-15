@@ -1,3 +1,22 @@
+#include <iostream>
+
+#include "odeplus/common/constants.hpp"
+#include "odeplus/phy/world.hpp"
+#include "odeplus/viz/renderer.hpp"
+
+using namespace odeplus;
+
+int main(int argc, char** argv)
+{
+  phy::WorldPtr world = std::make_shared<phy::World>(
+    constants::DEFAULT_GRAVITY, constants::DEFAULT_PATH_TEXTURES);
+  viz::RendererPtr renderer = std::make_shared<viz::Renderer>();
+
+  world->enableRendering(renderer);
+}
+
+
+/*
 #include <unistd.h>
 #include <sys/types.h>
 #include <pwd.h>
@@ -57,3 +76,4 @@ int main(int argc, char** argv)
   std::cout << "ODE Plus" << std::endl;
   return 0;
 }
+*/
