@@ -1,0 +1,17 @@
+if(NOT EXISTS "/home/daichi/Work/odeplus/third_party/ode-16.0/build/install_manifest.txt")
+	message(FATAL_ERROR "Cannot find install manifest: \"/home/daichi/Work/odeplus/third_party/ode-16.0/build/install_manifest.txt\"")
+endif()
+
+file(READ "/home/daichi/Work/odeplus/third_party/ode-16.0/build/install_manifest.txt" FILES)
+string(REGEX REPLACE "\n" ";" FILES "${FILES}")
+
+foreach(FILE ${FILES})
+	message(STATUS "Uninstalling: ${FILE}")
+	if(EXISTS "${FILE}")
+		file(REMOVE ${FILE})
+	elseif(IS_SYMLINK "${FILE}")
+		file(REMOVE ${FILE})
+	else()
+		message(STATUS "File \"${FILE}\" does not exist.")
+	endif()
+endforeach()

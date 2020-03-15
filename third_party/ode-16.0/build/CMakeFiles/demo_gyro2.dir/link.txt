@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/demo_gyro2.dir/ode/demo/demo_gyro2.cpp.o  -o demo_gyro2 -Wl,-rpath,/home/daichi/Work/odeplus/third_party/ode-16.0/build libdrawstuff.so libode.so.0.16.0 -lpthread -lGL -lGLU -lSM -lICE -lX11 -lXext 
